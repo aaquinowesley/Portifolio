@@ -1,3 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Oswald:wght@200;300;700&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.img-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zomm 30s timing-function delay iteration-count direction fill-mode;
+}
+
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+}
+
+.banner h1{
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    font-family: "Oswald", serif;
+    font-weight: 250;
+    text-shadow: .2rem .1em 2px rgb(0, 0, 0);
+    line-height: 3.5rem;
+    opacity: 0;
+    margin-bottom: 2rem;
+    animation: moveBanner 1s 0.5s forwards;
+}
+
+.banner p{
+    font-family: "Courgette", serif;
+    color: rgb(255, 255, 255);
+    text-shadow: .2rem  .1rem 2px rgb(0, 0, 0);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: moveBanner 1s 0.7s forwards;
+}
+
+.banner button{
+    font-family: "Courgette", serif;
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 1rem 2rem ;
+    letter-spacing: .1rem;
+    border-radius: 4px;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    opacity: 0;
+    animation: moveBanner 1s 0.9s forwards;
+}
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(9rem) rotateY(-30deg);
+
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+        
+    }
+}
+
+
+.banner button:hover{
+    color: rgb(0, 0, 0);
+}
+
