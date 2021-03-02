@@ -21,6 +21,17 @@ header{
     --font-secudary: "Yeseva One", cursive;
 }
 
+body{
+    background-color: var(--body-bg);
+    color: var(--body-color);
+}
+
+.dark-mode:root{
+    --body-bg:rgb(40, 44, 52); 
+    --body-color:#ffffffe9;
+    --link-color-hover: rgba(5, 5, 5, 0.796);
+    
+}
 
 .hamburguer{
     /* background-color: rgb(0, 0, 0); */
@@ -103,13 +114,14 @@ header{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: zoom 15s;
+    opacity: 0.5;
+    animation: zoom 25s;
 }
 
 
 @keyframes zoom {
     0%{
-        transform: scale(1.2);
+        transform: scale(1.3);
     }
     100%{
         transform: scale(1);
@@ -125,7 +137,7 @@ header{
 
 .banner h1{
     color: rgb(255, 255, 255);
-    font-size: 4em;
+    font-size: 5em;
     font-family: var(--font-primary);
     font-weight: 250;
     text-shadow: .2rem .1em 2px rgba(0, 0, 0, 0.097);
@@ -166,7 +178,7 @@ header{
 
 @keyframes moveBanner{
     0%{
-        transform: translateY(9rem) rotateY(-30deg);
+        transform: translateY(10rem) rotateY(-30deg);
 
     }
     100%{
@@ -179,11 +191,12 @@ header{
 .sidebar{
     width: 20rem;
     height: 100vh;
-    background-color: #00000098;
+    background-color: #0000004d;
     position: fixed;
     top: 0;
     right: -20rem;
     transition: all 1s;
+    z-index: 99;
 }
 
 .show-menu .sidebar{
@@ -202,15 +215,27 @@ header{
     margin-bottom: 0.5rem;
 }
 
+.menu button{
+    font-family: var(--font-secudary);
+    position: fixed;
+    top: -6rem;
+    z-index: 100;
+    right: 1rem;
+    cursor: pointer;
+    
+    
+}/*button Dark Mode*/
+
 .menu-link{
     font-family: var(--font-secudary);
     font-size: 2rem;
-    color: #ffffff;
+    color: #ffffffc2;
     transition: color 1s;
 }
 
 .menu-link:hover{
     color: rgb(47, 128, 237);
+    
 }
 
 .social-media{
@@ -222,8 +247,8 @@ header{
 }
 
 .social-media i{
-    background-color: rgba(0, 0, 0, 0.145);
-    color: #000000;
+    background-color: rgb(0, 0, 0);
+    color: #ffffffcb;
     height: 2.5rem;
     width: 2.5rem;
     font-size: 2.3rem;
@@ -235,5 +260,168 @@ header{
 }
 
 .social-media i:hover{
-    background-color: #2F80ED;
+    background-color: #3181f883;
+}
+
+.conhecimentos{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(6, 6rem);
+    row-gap: .5rem;
+}
+
+.conhecimento:nth-child(1){
+    grid-column: 4/7;
+    grid-row: 1/3;
+}
+
+.conhecimento:nth-child(2){
+    grid-column: 3/6;
+    grid-row: 3/5;
+}
+
+.conhecimento:nth-child(3){
+    grid-column: 4/7;
+    grid-row: 5/-1;
+    
+}
+
+.conhecimento:nth-child(4){
+    grid-column: 11/14;
+    grid-row: 1/3;
+}
+
+.conhecimento:nth-child(5){
+    grid-column: 12/15;
+    grid-row: 3/5;
+}
+
+.conhecimento:nth-child(6){
+    grid-column: 11/14;
+    grid-row: 5/-1;
+}
+
+/*
+.sessao-conhecimentos{
+   background-color: #f5f5f5;
+}
+*/
+
+
+.sessao-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sessao-header h1{
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    border-bottom: solid 3px ;
+    color: #070707;
+    margin-bottom: 1.5rem;
+
+}
+
+.conhecimento-header{
+    display: flex;
+    align-items: center;
+    color: #070707;
+}
+
+.conhecimento-header i{
+    font-size: 2.5rem;
+}
+
+.conhecimento-header h3{
+    font-family: var(--font-secudary);
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.conhecimento-text{
+    font-family: var(--font-secudary);
+    margin-top: 1rem;
+}
+
+.conhecimentos-img-wrapper{
+    grid-column: 7/10;
+    grid-row: 1/9;
+    width: 100%;
+
+}
+
+.conhecimentos-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    
+}
+
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.card{
+    width: 15rem;
+    height: 20rem;
+    position: relative;
+}
+
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.card-info{
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0.0.2rem 0.3rem black;
+    transition: all .3s;
+
+}
+
+.card-info h2{
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+}
+
+.card-info h3{
+    font-family: var(--font-secudary);
+    font-weight: bolder;
+    color: white;
+}
+
+.card-info p{
+    font-family: var(--font-secudary);
+    color: #f1f1f1;
+    width: 80%;
+}
+
+.card-info button{
+    width: 7rem;
+    height: 2.5rem;
+    font-family: var(--font-secudary);
+    background: #56CCF2; 
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
 }

@@ -5,7 +5,7 @@ Meu portfólio de Desenvolvedor
 
 O controle das tarefas desse projeto será realizados no GitHub
 
-## ìcones 
+## ícones 
 
 :package: novas funcionalidades
 :arrow_up: atualizações
